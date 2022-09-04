@@ -1,4 +1,4 @@
-let value = 'null';
+let value = ' ';
 
 document.getElementById('zero').addEventListener('click', function inputZero(){
     return value = 0;
@@ -34,5 +34,17 @@ document.getElementById('enter').addEventListener('click', function equals() {
     console.log(value);
 });
 document.getElementById('clear').addEventListener('click', function clear(){
-    return value = 'null';
+    return value = ' ';
 });
+
+let outputText = document.createElement('div');
+outputText.innerHTML = value;
+document.body.appendChild(outputText);
+
+document.addEventListener('click', function everyClick(){
+    outputText.innerHTML = value;
+});
+
+// create a grid for your buttons to have a layout
+
+// create the functions of the calculations
