@@ -1,50 +1,109 @@
 let value = ' ';
-
-document.getElementById('zero').addEventListener('click', function inputZero(){
-    return value = 0;
-});
-document.getElementById('one').addEventListener('click', function inputOne(){
-    return value = 1;
-});
-document.getElementById('two').addEventListener('click', function inputTwo(){
-    return value = 2;
-});
-document.getElementById('three').addEventListener('click', function inputThree(){
-    return value = 3;
-});
-document.getElementById('four').addEventListener('click', function inputFour(){
-    return value = 4;
-});
-document.getElementById('five').addEventListener('click', function inputFive(){
-    return value = 5;
-});
-document.getElementById('six').addEventListener('click', function inputSix(){
-    return value = 6;
-});
-document.getElementById('seven').addEventListener('click', function inputSeven(){
-    return value = 7;
-});
-document.getElementById('eight').addEventListener('click', function inputEight(){
-    return value = 8;
-});
-document.getElementById('nine').addEventListener('click', function inputNine(){
-    return value = 9;
-});
-document.getElementById('enter').addEventListener('click', function equals() {
-    console.log(value);
-});
-document.getElementById('clear').addEventListener('click', function clear(){
-    return value = ' ';
-});
-
+let value2 = ' ';
+let operation = ' ';
 let outputText = document.createElement('div');
-outputText.innerHTML = value;
+outputText.innerHTML = value+operation+value2;
 document.body.appendChild(outputText);
 
-document.addEventListener('click', function everyClick(){
-    outputText.innerHTML = value;
+document.getElementById('zero').addEventListener('click', function inputZero(){
+    if(typeof value == 'string') {
+        value = value + '0';
+    } else { value2 = value2 + '0'}
+    outputText.innerHTML = value+operation+value2;
+});
+document.getElementById('one').addEventListener('click', function inputOne(){
+    if(typeof value == 'string') {
+        value = value + '1';
+    } else {value2 = value2 + '1'}
+    outputText.innerHTML = value+operation+value2;
+});
+document.getElementById('two').addEventListener('click', function inputTwo(){
+    if(typeof value == 'string') {
+        value = value + '2';
+    } else {value2 = value2 + '2'}
+    outputText.innerHTML = value+operation+value2;
+});
+document.getElementById('three').addEventListener('click', function inputThree(){
+    if(typeof value == 'string') {
+        value = value + '3';
+    } else {value2 = value2 + '3'}
+    outputText.innerHTML = value+operation+value2;
+});
+document.getElementById('four').addEventListener('click', function inputFour(){
+    if(typeof value == 'string') {
+        value = value + '4';
+    } else {value2 = value2 + '4'}
+    outputText.innerHTML = value+operation+value2;
+});
+document.getElementById('five').addEventListener('click', function inputFive(){
+    if(typeof value == 'string') {
+        value = value + '5';
+    } else {value2 = value2 + '5'}
+    outputText.innerHTML = value+operation+value2;
+});
+document.getElementById('six').addEventListener('click', function inputSix(){
+    if(typeof value == 'string') {
+        value = value + '6';
+    } else {value2 = value2 + '6'}
+    outputText.innerHTML = value+operation+value2;
+});
+document.getElementById('seven').addEventListener('click', function inputSeven(){
+    if(typeof value == 'string') {
+        value = value + '7';
+    } else {value2 = value2 + '7'}
+    outputText.innerHTML = value+operation+value2;
+});
+document.getElementById('eight').addEventListener('click', function inputEight(){
+    if(typeof value == 'string') {
+        value = value + '8';
+    } else {value2 = value2 + '8'}
+    outputText.innerHTML = value+operation+value2;
+});
+document.getElementById('nine').addEventListener('click', function inputNine(){
+    if(typeof value == 'string') {
+        value = value + '9';
+    } else {value2 = value2 + '9'}
+    outputText.innerHTML = value+operation+value2;
 });
 
-// create a grid for your buttons to have a layout
+document.getElementById('addition').addEventListener('click', function addValues(){
+    value = Number(value);
+    operation = '+';
+    outputText.innerHTML = value+operation+value2;
+});
+document.getElementById('subtract').addEventListener('click', function subtractValues(){
+    value = Number(value);
+    operation = '-';
+    outputText.innerHTML = value+operation+value2;
+});
+document.getElementById('multiply').addEventListener('click', function multiplyValues(){
+    value = Number(value);
+    operation = '*';
+    outputText.innerHTML = value+operation+value2;
+});
+document.getElementById('divide').addEventListener('click', function divideValues(){
+    value = Number(value);
+    operation = '/';
+    outputText.innerHTML = value+operation+value2;
+});
 
-// create the functions of the calculations
+document.getElementById('clear').addEventListener('click', function clear(){
+    value = ' ';
+    value2 = ' ';
+    operation = ' ';
+    outputText.innerHTML = value+operation+value2;
+});
+
+document.getElementById('enter').addEventListener('click', function equals() {
+    if(operation === '+') {
+        return outputText.innerHTML = Number(value) + Number(value2); 
+    } else if(operation === '-'){
+        outputText.innerHTML = Number(value) - Number(value2); 
+    } else if(operation === '*'){
+        outputText.innerHTML = Number(value) * Number(value2);
+    } else { 
+        outputText.innerHTML = Number(value) / Number(value2);
+    }
+});
+
+// need to add in the decimal
